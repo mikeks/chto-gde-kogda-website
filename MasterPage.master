@@ -1,0 +1,117 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Клуб "Что? Где? Когда?" - Филадельфия</title>
+    <link href="main.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <asp:ContentPlaceHolder ID="Head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1239037252877294";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <img class="logo" width="90" src="/Img/logo.png" />
+
+    <%
+#If DEBUG Then
+    Response.Write("<div class='machinename'>" & Environment.MachineName & "</div>")
+#End If
+        %>
+
+    <div class="title-box">
+        <div class="title">Клуб "Что? Где? Когда?"</div>
+        <div class="title-phila">Филадельфия, США</div>
+    </div>
+
+    <div class="next-game-box">
+        <div class="map-box">
+            <a href="about-game.aspx#map" class="map-box-a">
+                <img src="/Img/map.png" />
+                <div class="map-box-text">Карта проезда</div>
+            </a>
+            <a href="about-game.aspx">
+                <div class="map-box-text">Об игре</div>
+            </a>
+        </div>
+        <div class="next-game">Следующая игра</div>
+        <div class="next-game-dt">1 июля 2017</div>
+        <div class="next-game-tm">5:40 PM</div>
+    </div>
+
+    <div class="login-box">
+        <%If UserManager.CurrentUser Is Nothing Then %>
+            Вы не авторизированы
+            <div>
+                <div class="login-facebook">
+                    Войти в один клик
+                    <a href="/ExtLogin/FacebookLogin.aspx">
+                        <img src="/Img/facebookLogin.png" style="margin-top: 5px" /></a>
+                </div>
+                <div class="login-direct">
+                    <a href="#" onclick="alert('Прямая регистрация пока не доступна. Пожалуйста, войдите через Facebook.');return false;">Регистрация</a>
+                </div>
+                <div class="login-direct-2">
+                    <a href="/login.aspx">Вход с паролем</a>
+                </div>
+            </div>
+        <%else %>
+        <a href="team.aspx" class="no-underline">
+            <div>
+                <%=UserManager.CurrentUser.Name %>
+            </div>
+            <div>
+                <%=UserManager.CurrentUser.Title %>
+            </div>
+            <div class="not-approved">
+                <%If UserManager.CurrentUser.UserType = UserTypeEnum.PlayerPhila AndAlso Not UserManager.CurrentUser.IsApproved %>(ожидает подтверждения)<%End If%>
+            </div>
+        </a>
+        <div class="logout-link">
+            <a href="/?logout=1">Выйти</a>
+        </div>
+        <%end If %>
+    </div>
+
+
+    <a href="https://www.facebook.com/groups/ChtoGdeKogdaPhila/" target="_blank">
+        <img class="facebook-link" src="/Img/facebook_button.gif" /></a>
+
+
+    <div class="menu-bar">
+        <a class="menu-item<%= _isSel("default.aspx") %>" href="/">Главная
+        </a>
+        <a class="menu-item<%= _isSel("about-game.aspx") %>" href="/about-game.aspx">Новичкам
+        </a>
+        <a class="menu-item<%= _isSel("results.aspx") %>" href="/results.aspx">Результаты
+        </a>
+<%--        <a class="menu-item<%= _isSel("prizes.aspx") %>" href="/prizes.aspx">Призы
+        </a>--%>
+        <a class="menu-item<%= _isSel("contacts.aspx") %>" href="/contacts.aspx">Обратная связь
+        </a>
+        <a class="menu-item<%= _isSel("support.aspx") %>" href="/support.aspx">Спонсоры
+        </a>
+        <a class="menu-item<%= _isSel("media.aspx") %>" href="/media.aspx">Пресса о нас
+        </a>
+    </div>
+
+    <div class="content-area">
+        <asp:ContentPlaceHolder ID="ContentArea" runat="server" />
+
+    </div>
+
+    <%If IsAnySel OrElse AllowComments Then%>
+    <div class="fb-comments" data-href="http://chtogdekogda.org" data-numposts="5"></div>
+    <%End If %>
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿body {
+}
+
+        .fieldTitle {
+            min-width: 200px;
+            display: block;
+        }
+        ul.regList {
+            padding-left: 0;
+        }
+        ul.regList li {
+            list-style-type: none;
+            margin: 15px 0;
+        }
+
+        input[type=text],select,input[type=submit] {
+            padding: 6px;
+            font-size: large;
+        }

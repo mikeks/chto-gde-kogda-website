@@ -1,0 +1,418 @@
+﻿body {
+    margin: 10px 7px 0 15px;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.logo {
+    float: right;
+        margin: 0 20px 15px 0;
+}
+
+
+.title {
+    font-family: sans-serif;
+    font-size: 36px;
+    letter-spacing: 4px;
+    color: #1262a7;
+}
+
+.title-box {
+    float: left;
+}
+
+.facebook-link {
+    margin-left: 25px;
+}
+
+
+.title-phila {
+    font-family: sans-serif;
+    letter-spacing: 6px;
+    font-size: 26px;
+    color: #1262a7;
+    white-space: nowrap;
+}
+
+.next-game-box {
+    float: left;
+    border: solid 1px #3286a2;
+    border-radius: 3px;
+    padding: 0 10px;
+    width: 350px;
+    margin: 0 20px 10px 20px;
+    background: #b1e0f0;
+    box-shadow: #3286a2 0px 0px 6px;
+}
+
+
+.map-box {
+    float: right;
+}
+
+.map-box-a {
+    text-decoration: none;
+}
+
+.map-box-text {
+    text-decoration: none;
+    color: #1262a7;
+    text-decoration: none;
+    position: relative;
+    top: -10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.next-game {
+    font-size: 32px;
+    color: #1262a7;
+    text-align: center;
+}
+
+.next-game-dt {
+    font-size: 32px;
+    color: #1262a7;
+    text-align: center;
+}
+
+.next-game-tm {
+    font-size: 22px;
+    color: #1262a7;
+    text-align: center;
+}
+
+.next-game-details {
+    font-size: 16px;
+    color: #1262a7;
+}
+
+
+
+.login-box {
+    float: left;
+    border-radius: 3px;
+    padding: 10px 10px;
+    width: 350px;
+    margin: 0 20px 10px 20px;
+    background: #f6fdff;
+    box-shadow: #3286a2 0px 0px 6px;
+    font-size: 17px;
+    text-align: center;
+}
+
+.login-facebook {
+    float: left;
+    font-size: 14px;
+    width: 50%;
+    margin-top: 5px;
+}
+
+.login-direct {
+    padding-top: 18px;
+}
+
+.login-direct-2 {
+    padding-top: 5px;
+}
+
+.menu-bar {
+    clear: both;
+    background-color: #c3e2ec;
+    margin-top: 7px;
+    white-space: nowrap;
+}
+
+.menu-item {
+    display: inline-block;
+    padding: 5px 20px;
+    margin: 0px 6px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    font-size: 19px;
+    text-decoration: none;
+    color: black;
+}
+
+    .menu-item:hover {
+        background-color: #8ee2ff;
+        text-decoration: none;
+    }
+
+    .menu-item.selected {
+        background-color: #0dc2ff;
+    }
+
+
+/* end main */
+
+.days-left {
+    float: right;
+    width: 220px;
+    background: #c3e2ec;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: red 0 0 10px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.days-left-cnt {
+    font-size: 32px;
+    color: #1262a7;
+}
+
+h1, h2 {
+    color: #1262a7;
+}
+
+.content-area {
+    margin: 10px;
+    margin-bottom: 30px;
+}
+
+.button {
+    text-decoration: none;
+    color: #05335a;
+    display: inline-block;
+    background: #b1e0f0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: #7cc2da 2px 2px 7px;
+    border: solid 1px #7cc2da;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #73dcff;
+    text-decoration: none;
+}
+
+.redButton {
+    background: red;
+}
+
+.redButton:hover {
+    background-color: #ef0000;
+}
+
+.form-msg div {
+    margin-bottom: 10px;
+}
+
+.form-msg span {
+    display: inline-block;
+    min-width: 120px;
+    font-size: 12px;
+    vertical-align: top;
+}
+
+.form-msg input, textarea {
+    width: 300px;
+}
+
+.form-msg textarea {
+    height: 100px;
+}
+
+strong {
+    color: #2c8251;
+}
+
+a {
+    color: #1262a7;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.results-table {
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+    .results-table td {
+        border: solid 1px black;
+        text-align: center;
+        padding: 10px;
+    }
+
+.note {
+    margin: 15px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.reg-list li {
+    list-style-type: none;
+    margin: 10px 0;
+}
+
+#playerOpt {
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.cb-cap {
+    margin-top: 10px;
+    display: block;
+}
+
+.dd-team {
+    font-size: 20px;
+}
+
+.logout-link {
+    text-align: right;
+    font-size: small;
+    position: relative;
+    top: 7px;
+    left: 3px;
+}
+
+.not-approved {
+    font-size: small;
+    color: red;
+}
+
+a.no-underline:hover {
+    text-decoration: none;
+}
+
+.not-approved-status {
+    color: red;
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+.copyright {
+    margin: 25px 0;
+    font-size: 14px;
+    font-style: italic;
+    color: #1262a7;
+}
+
+.title-msg {
+    font-family: sans-serif;
+    font-size: 22px;
+    color: #1262a7;
+    margin: 0 0 15px 0;
+}
+
+.instructions {
+    font-size: 16px;
+    color: #1262bb;
+}
+
+img.razd {
+    max-width: 400px;
+    max-height: 400px;
+    display: block;
+    margin: 20px 0;
+}
+
+.days-left-span {
+    font-size: 24px;
+    display: inline-block;
+    border: solid 1px #398aa5;
+    padding: 4px;
+    background: #c3e2ec;
+    border-radius: 4px;
+}
+
+.team-image {
+    float: right;
+    max-width: 500px;
+    box-shadow: #3286a2 0 0 20px 3px;
+}
+
+.button-holder {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.your-team {
+    float: right;
+    width: 400px;
+    font-size: 16px;
+    background: #f6fdff;
+    border-radius: 3px;
+    padding: 10px 10px;
+    width: 350px;
+    margin: 0 20px;
+    background: #f6fdff;
+    box-shadow: #3286a2 0px 0px 6px;
+}
+
+div.team-url {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 16px;
+    background: #b1e0f0;
+    box-shadow: #3286a2 0 0 4px;
+    padding: 8px 0;
+}
+
+span.team-url {
+}
+
+.team-image-edit {
+    max-width: 50%;
+}
+
+.medal-1, .medal-2, .medal-3 {
+    display: inline-block;
+    background: #FFD700;
+    padding: 3px 0 0 0;
+    border-radius: 50%;
+    width: 20px;
+    height: 18px;
+    font-size: 13px;
+    vertical-align: top;
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+.medal-2 {
+    background: #c0c0c0;
+}
+
+.medal-3 {
+    background: #A57164;
+    color: white;
+}
+
+.sponsor {
+    max-width: 500px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.candidate-name {
+    display: inline-block;
+    min-width: 200px;
+}
+
+.team-list > li {
+    padding-bottom: 15px;
+}
+
+.machinename {
+    background: #b1e0f0;
+    width: 250px;
+    padding: 7px;
+    text-align: center;
+    border-radius: 5px;
+}

@@ -6,14 +6,14 @@ Imports Microsoft.VisualBasic
 Public Class Utility
 
 
-    Public Const CurrentGameNum As Integer = 19
+	Public Const CurrentGameNum As Integer = 20
 
 
 
-    Public Shared ReadOnly Property QuestionAcceptDaysLeft As Integer
+	Public Shared ReadOnly Property QuestionAcceptDaysLeft As Integer
         Get
-            Return (New Date(2017, 6, 20) - Date.Now).Days
-        End Get
+			Return (New Date(2017, 7, 23) - Date.Now).Days
+		End Get
     End Property
 
     Public Shared ReadOnly Property FacebookAppID As String

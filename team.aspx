@@ -17,8 +17,10 @@
     <section>
         <h1>Вопрос от команды на ближайшую игру</h1>
 
+	<%if Utility.QuestionAcceptDaysLeft >= 0 Then%>
         До окончания приема вопросов на ближайшую игру осталось игру <span class="days-left-span"><%= Utility.QuestionAcceptDaysLeft.ToString("00") %></span> дней. Если на ваш вопрос 
         во время игры другими командами будет дан хотя бы один правильный ответ, то команда получает бонусное <strong>очко</strong>.
+	<%End If%>
         
         <div style="margin:20px 0 10px 0">
             <a class="button" href="/team-question.aspx">Вопрос <%= UserManager.CurrentUser.Team.Name %></a>

@@ -5,10 +5,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Клуб "Что? Где? Когда?" - Филадельфия</title>
-    <link href="main.css" rel="stylesheet" />
+    <link href="main.css?1" rel="stylesheet" />
+    <meta property="fb:app_id" content="1239037252877294" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <asp:ContentPlaceHolder ID="Head" runat="server">
     </asp:ContentPlaceHolder>
+    <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-104529875-1', 'auto');
+          ga('send', 'pageview');
+    </script>
 </head>
 <body>
     <div id="fb-root"></div>
@@ -34,7 +43,7 @@
         <div class="title-phila">Филадельфия, США</div>
     </div>
 
-    <div class="next-game-box">
+<%--    <div class="next-game-box">
         <div class="map-box">
             <a href="about-game.aspx#map" class="map-box-a">
                 <img src="/Img/map.png" />
@@ -47,7 +56,7 @@
         <div class="next-game">Следующая игра</div>
         <div class="next-game-dt">5 августа 2017</div>
         <div class="next-game-tm">5:30 PM</div>
-    </div>
+    </div>--%>
 
     <div class="login-box">
         <%If UserManager.CurrentUser Is Nothing Then %>
@@ -99,9 +108,9 @@
         </a>--%>
         <a class="menu-item<%= _isSel("contacts.aspx") %>" href="/contacts.aspx">Обратная связь
         </a>
-        <a class="menu-item<%= _isSel("support.aspx") %>" href="/support.aspx">Спонсоры
+        <a class="menu-item support<%= _isSel("support.aspx") %>" href="/support.aspx">Спонсоры
         </a>
-        <a class="menu-item<%= _isSel("media.aspx") %>" href="/media.aspx">Пресса о нас
+        <a class="menu-item media<%= _isSel("media.aspx") %>" href="/media.aspx">Пресса о нас
         </a>
     </div>
 
@@ -110,8 +119,8 @@
 
     </div>
 
-    <%If IsAnySel OrElse AllowComments Then%>
-    <div class="fb-comments" data-href="http://chtogdekogda.org" data-numposts="5"></div>
+    <%If CanonicalUrl IsNot Nothing Then%>
+    <div class="fb-comments" data-href="<%= CanonicalUrl  %>" data-numposts="5"></div>
     <%End If %>
 </body>
 </html>

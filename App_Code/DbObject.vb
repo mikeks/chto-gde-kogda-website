@@ -52,8 +52,8 @@ Public Class DbObject
         _exec(storedProcName, addParAction, CommandType.StoredProcedure)
     End Sub
 
-    Public Shared Sub ExecSQL(storedProcName As String)
-        _exec(storedProcName, Nothing, CommandType.Text)
+    Public Shared Sub ExecSQL(storedProcName As String, Optional addParAction As Action(Of SqlCommand) = Nothing)
+        _exec(storedProcName, addParAction, CommandType.Text)
     End Sub
 
 

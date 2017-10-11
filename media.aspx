@@ -8,6 +8,26 @@
         Читайте отчеты об играх в беслатной газете <a href="http://adandlife.com" target="_blank">"Реклама и Жизнь"</a> - страница 18.
     </p>
 
+    <section id="game20">
+        <h1>Очерк о XX игре (5 августа 2017)</h1>
+        <p>
+            Опубликован в 32 номере газеты "Реклама и Жизнь" за 2017 год. Нажмите на изображение, чтобы открыть виртуальную газету.
+        </p>
+        <a target="_blank" href="https://www.docdroid.net/UE5Nzbv/32compressed.pdf#page=18">
+            <img src="/Img/media/game20.jpg" />
+        </a>
+    </section>
+
+    <section id="game19">
+        <h1>Очерк о XIX игре (1 июля 2017)</h1>
+        <p>
+            Опубликован в 27 номере газеты "Реклама и Жизнь" за 2017 год. Нажмите на изображение, чтобы открыть виртуальную газету.
+        </p>
+        <a target="_blank" href="https://www.docdroid.net/I5BCmQB/riz27.pdf#page=18">
+            <img src="/Img/media/game19.jpg" />
+        </a>
+    </section>
+
     <section>
         <h1>Очерк о майской XVIII игре</h1>
         <p>

@@ -9,6 +9,8 @@ Partial Class MasterPage
 
     Dim _isAnySel As Boolean = False
 
+    Public Property CanonicalUrl As String
+
     Protected ReadOnly Property IsAnySel As Boolean
         Get
             Return _isAnySel

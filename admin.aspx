@@ -33,11 +33,18 @@
     <%Next%>
     </ul>
 
+	<h2>Вопросы игр</h2>
+	<ol>
+        <%For gn = 19 To Utility.CurrentGameNum %>
+			<li><a href="/admin-question-list.aspx?gameNum=<%= gn %>">Вопросы <%= gn %> игры</a></li>
+		<%Next%>
+	</ol>
+
     <h2>Вопросы от команд</h2>
 
     <%
-        Dim qq = TeamQuestion.GetAll()
-        For Each q In qq
+		Dim qq = TeamQuestion.GetAll()
+		For Each q In qq
         %>
 
             <h3><%=q.Team.Name %></h3>

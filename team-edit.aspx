@@ -32,7 +32,7 @@
             <div>
                 <input type="file" runat="server" id="Photo" name="razd" />
                 <div class="instructions">
-                    Вы можете загрузить изображение в формате jpg или png.
+                    Вы можете загрузить фото вашей команды в формате jpg или png.
                 </div>
             </div>
 
@@ -56,6 +56,36 @@
             </div>
             <textarea style="width: 700px; height: 150px;" maxlength="700" name="aboutText"><%= Tm.AboutText %></textarea>
         </section>
+
+        <section>
+            <h2>Фотогалерея</h2>
+
+            <%
+                For Each gp In Gallery
+               %>
+
+                <div class="gallery-upload-box">
+                    <a class="del-gallery-button" href="/team-edit.aspx?delPhoto=<%= gp.Id %>">×</a>
+                    <a target="_blank" href="<%= gp.BigImageUrl %>">
+                        <img src="<%= gp.SmallImageUrl %>" />
+                    </a>
+                    <br /><br />
+                    <input type="text" name="photoDescription_<%= gp.Id %>" value="<%= gp.Description %>" placeholder="Подпись под фото" style="width:300px" />
+                </div>
+            
+            <%
+                Next
+                %>
+
+            <div class="instructions">
+                Тут вы можете добавить еще фоток в галлерею. По фотке за раз. К фоткам галлереи можно добавлять подписи.
+            </div>
+            
+            <input type="file" runat="server" id="GalleryPhoto" name="galleryPhoto" />
+
+
+        </section>
+
 
         <div style="margin-top: 25px">
             <input type="submit" class="button" name="save" value="Сохранить" /> 

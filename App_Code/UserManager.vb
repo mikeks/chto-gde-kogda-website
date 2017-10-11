@@ -147,7 +147,12 @@ Public Class UserManager
 
     End Sub
 
-    Public Shared Sub GotoMyPage()
+	Public Shared Sub TestAdminAccess()
+		If CurrentUser Is Nothing OrElse CurrentUser.UserType <> UserTypeEnum.Admin Then HttpContext.Current.Response.Redirect("/", True)
+	End Sub
+
+
+	Public Shared Sub GotoMyPage()
 
         If CurrentUser Is Nothing Then
             HttpContext.Current.Response.Redirect("/")

@@ -19,38 +19,59 @@ Partial Class TeamPageEdit
         End Get
     End Property
 
+    Protected ReadOnly Property Gallery As TeamGalleryPhoto()
+        Get
+            Return TeamGalleryPhoto.GetForTeam(Tm.Id)
+        End Get
+    End Property
+
     Protected Overrides Sub OnLoad(e As EventArgs)
         MyBase.OnLoad(e)
         UserManager.TestAccess(True)
 
         If UserManager.CurrentUser.UserType = UserTypeEnum.Admin Then
             Try
-                _teamId = Request("teamid")
+                If Request("teamid") IsNot Nothing Then
+                    Session("adminTeamId") = Request("teamid")
+                End If
+                _teamId = Session("adminTeamId")
                 If _teamId = 0 Then Throw New Exception("no teamid")
             Catch
                 Response.Redirect("/", True)
             End Try
         End If
 
+
+        If Request("delPhoto") IsNot Nothing Then
+            Try
+                Dim ph = TeamGalleryPhoto.GetById(Request("delPhoto"))
+                ph.Delete()
+            Catch
+            End Try
+            Response.Redirect("/team-edit.aspx")
+        End If
+
         If Request("save") IsNot Nothing Then
 
             Tm.AboutText = Request("aboutText")
 
-            If Photo.PostedFile IsNot Nothing AndAlso Photo.PostedFile.ContentLength > 0 Then
-                Dim ext = Path.GetExtension(Photo.PostedFile.FileName).ToLowerInvariant()
-                If ext <> ".jpg" And ext <> ".png" Then
-                    ErrorMsg = "Раздача должна быть в формете PNG или JPG."
-                ElseIf Photo.PostedFile.ContentLength > 10000000 Then
-                    ErrorMsg = "Слишком большой файл. Загрузите файл поменьше."
-                Else
-                    'Dim len = Photo.PostedFile.ContentLength
-                    'ReDim Tm.TeamImage(len)
-                    Tm.SetTeamImage(Photo.PostedFile.InputStream)
-                    'Photo.PostedFile.InputStream.Read(Tm.TeamImage, 0, len)
-                End If
+
+            If ImageProcessor.ProcessImageUpload(Photo, ErrorMsg) Then
+                Tm.SetTeamImage(Photo.PostedFile.InputStream)
             End If
 
+            ImageProcessor.SaveGalleryImage(GalleryPhoto, ErrorMsg, Tm)
+
             Tm.Save()
+
+            For Each gp In Gallery
+                Dim descr = Request("photoDescription_" & gp.Id)
+                If descr IsNot Nothing AndAlso descr.Trim() <> gp.Description Then
+                    gp.Description = descr
+                    gp.SaveDescription()
+                End If
+            Next
+
             IsSaved = True
 
         End If

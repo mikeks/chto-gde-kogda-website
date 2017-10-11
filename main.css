@@ -170,6 +170,7 @@ h1, h2 {
 .content-area {
     margin: 10px;
     margin-bottom: 30px;
+    clear: both;
 }
 
 .button {
@@ -335,6 +336,7 @@ img.razd {
     float: right;
     max-width: 500px;
     box-shadow: #3286a2 0 0 20px 3px;
+    margin: 0 0 15px 15px;
 }
 
 .button-holder {
@@ -415,4 +417,220 @@ span.team-url {
     padding: 7px;
     text-align: center;
     border-radius: 5px;
+}
+
+.question-link {
+    width: 30px;
+    height: 25px;
+    display: inline-block;
+    border: solid 1px;
+    border-radius: 4px;
+    text-align: center;
+    padding-top: 5px;
+    margin-bottom: 5px;
+	text-decoration: none;
+	cursor: pointer;
+    background: #a6e9ff;
+}
+
+.question-link:hover {
+	background-color: #c3e2ec;
+	text-decoration: none;
+}
+
+.answer-block {
+    margin-top: 40px;
+}
+
+.answer-block > div {
+    margin-top: 15px;
+}
+
+.transparentButton {
+    border: dashed 1px blue;
+    display: inline-block;
+    padding: 1px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.question-from {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+strong > a {
+    color: #2c8251;
+    text-decoration: underline;
+}
+
+.best-question-label {
+    width: 500px;
+    display: inline-block;
+    padding: 10px;
+}
+
+.gallery-upload-box {
+    margin: 20px;
+    border: solid 1px #3286a2;
+    padding: 10px 5px 10px 10px;
+    display: inline-block;
+    background: #c3e2ec;
+    border-radius: 2px;
+}
+
+.gallery-box {
+    float: left;
+    margin: 15px;
+    font-size: small;
+    text-align: center;
+    width: 350px;
+    border: solid 1px #917d48;
+    height: 300px;
+    padding: 15px 0 0 0;
+    background: #c3e2ec;
+}
+
+.del-gallery-button {
+        float: right;
+    position: relative;
+    top: -11px;
+    font-size: 28px;
+}
+
+span.moon-rating {
+    font-size: 10px;
+    display: block;
+    float: right;
+    color: #ccc;
+}
+
+.game-num-1 {
+    background-color: greenyellow;
+}
+
+.game-num-2 {
+    background-color: yellow;
+}
+
+.game-num-3 {
+    background-color: deepskyblue;
+}
+
+.game-num-4 {
+    background-color: gainsboro;
+}
+
+.rating-chart {
+}
+
+.rating-chart-cont {
+    float: right;
+    text-align: center;
+    font-size: 13px;
+}
+
+.rating-max { 
+    font-size: 12px;
+    color: #ccc;
+}
+
+.tab-r, .tab-l {
+    padding: 5px 14px;
+    display: inline-block;
+    background: #e9eff1;
+    margin: 10px 0 0 0;
+    border: solid 1px black;
+    border-width: 1px 1px 0 0;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+    color: black;
+}
+
+.tab-l:hover,.tab-r:hover {
+    text-decoration: none;
+}
+
+.tab-l {
+    border-width: 1px 1px 0 1px;
+    border-radius: 4px 0 0 0;
+}
+
+.tab-r {
+    border-radius: 0 4px 0 0;
+}
+
+.tab-r.active,.tab-l.active {
+    background: #a6e9ff;
+    cursor: default;
+}
+
+.question-list {
+    padding: 10px;
+    padding-right: 0;
+    padding-bottom: 6px;
+    border: solid 1px #3286a2;
+    background: #eafaff;
+    width: 375px;
+}
+
+.game-select {
+    font-size: 20px;
+    padding: 5px;
+}
+
+.game-select-cont {
+    border: solid 1px #3286a2;
+    background: #eafaff;
+    width: 375px;
+    padding: 10px;
+    padding-right: 0;
+    border-bottom-width: 0;
+    text-align: center;
+}
+
+.game-article img {
+        max-width: 250px;
+}
+
+.game-article {
+    /* border: solid 1px red; */
+    display: inline-block;
+    text-align: center;
+    margin-right: 7px;
+    /* color: #000000; */
+    /* background: #d8d8d8; */
+    padding: 4px 0 0 0;
+    font-size: 24px;
+    text-decoration: none!important;
+}
+
+@media only screen and (max-width: 1225px) {
+    .menu-item.media {
+        display: none;
+    }
+}
+
+/*@media only screen and (max-width: 1000px)  {
+    .menu-item.support {
+        display: none;
+    }
+}*/
+
+.bonus-title {
+    font-size: 32px;
+    color: #ff2a00;
+}
+
+.bonus-descr {
+    font-size: 16px;
+    color: #353535;
+}
+
+.bonus-table {
+    max-width:1000px;
+}
+
+.bonus-table td {
+    padding-bottom: 30px;
 }

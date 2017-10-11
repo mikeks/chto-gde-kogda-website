@@ -16,6 +16,14 @@ Public Class Team
     Public Property AboutText As String
     Public Property TeamImage As Byte()
     Public Property IsInLeague As Boolean
+    'Public Property MoonRatingData As Dictionary(Of Integer, Integer) ' game number / team Moon rating on this game
+    Public Property CurrentMoonRating As Integer
+    Public Property MaxinumMoonRating As Integer
+
+    Public Property IsBestMaximumRating As Boolean
+
+    Public Property MoonRatingTemp As Integer ' this is temporarily storage for calculation
+
 
     Public Sub SetTeamImage(str As Stream)
 
@@ -47,11 +55,20 @@ Public Class Team
 
     Public Property GameResults As New List(Of GameResult)
 
-    Public ReadOnly Property AvgPoints As Integer
+    Public ReadOnly Property PlayedLast3Games As Boolean
         Get
-            Return GameResults.Sum(Function(x) x.Points) / GameResults.Count
+            Return GameResults.Where(Function(x) x.GameNum > Utility.QuestionsAvaliableForGame - 3).Count() >= 2
         End Get
     End Property
+
+
+
+    'Public ReadOnly Property AvgPoints As Double
+    '    Get
+    '        Dim gr = GameResults.Where(Function(x) x.GameNum >= Utility.CurrentGameNum - 5)
+    '        Return gr.Sum(Function(x) x.Points) / gr.Count
+    '    End Get
+    'End Property
 
     Public Sub ReadFromDb(rdr As SqlDataReader) Implements IDbObject.ReadFromDb
         Id = rdr("Id")

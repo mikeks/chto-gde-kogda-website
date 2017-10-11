@@ -9,6 +9,8 @@ Partial Class _Default
     Protected Overrides Sub OnLoad(e As EventArgs)
         MyBase.OnLoad(e)
 
+        DirectCast(Master, MasterPage).CanonicalUrl = "http://chtogdekogda.org"
+
         If Request("logout") IsNot Nothing Then
             UserManager.CurrentUser = Nothing
             Response.Redirect("/", True)

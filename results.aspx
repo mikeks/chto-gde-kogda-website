@@ -104,7 +104,7 @@
                 </span>
                 <%End If %>
 
-                <%If t.Name = "Deja Vu" Then %>
+                <%If t.Name = "OneГоги" Then %>
                 <span title="У этой команды сейчас находится БОЛЬШАЯ ФИЛАДЕЛЬФИЙСКАЯ СОВА">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" viewBox="0 0 31.323 31.322" xml:space="preserve">
 		            <path d="M19.224,8.009c-0.111,0-0.22,0.01-0.327,0.023c0.126,0.143,0.205,0.32,0.205,0.516c0,0.465-0.428,0.842-0.952,0.842
@@ -135,25 +135,26 @@
 			            c1.377,0.753,3.098,1.154,4.966,1.159c2.282-0.005,4.344-0.604,5.829-1.711C20.331,17.055,19.357,19.023,19.301,21.511z
 			             M15.458,16.82c-3.83-0.008-6.994-1.787-7.445-4.954c0.714,1.076,2.034,1.803,3.544,1.803c1.126,0,2.146-0.404,2.889-1.054
 			            l0.084,0.079l0.929,1.243l0.934-1.278c0.736,0.624,1.734,1.01,2.833,1.01c1.638,0,3.051-0.854,3.709-2.082
-			            C22.635,14.928,19.399,16.812,15.458,16.82z"/>                </svg></span>
+			            C22.635,14.928,19.399,16.812,15.458,16.82z"/>
+                </svg></span>
                 <%End If%>
             </td>
             <%
-                For index = 0 To GameResult.All.Count - 1
-                    Dim ii = index
-                    Dim g = t.GameResults.FirstOrDefault(Function(x) x.GameNum = GameResult.All.Keys(ii))
+				For index = 0 To GameResult.All.Count - 1
+					Dim ii = index
+					Dim g = t.GameResults.FirstOrDefault(Function(x) x.GameNum = GameResult.All.Keys(ii))
 
-                    Dim med = "-"
-                    Dim mr = ""
-                    If g IsNot Nothing Then
-                        mr = g.AdjustedMoodRating
-                        Dim p = Math.Round(g.AdjustedMoodRating / g.MoonRatingBase * 100)
-                        If Math.Abs(p - 75) < 3 Then p = 75
-                        If Math.Abs(p - 50) < 3 Then p = 50
-                        mr &= " (временной коэфициент " & p / 100.0 & ")"
-                        If g.Position <= 3 Then med = "<span class='medal-" & g.Position & "'>" & g.Position & "</span>" Else med = g.Position
-                        If IsShowPoints Then med = If(g.Points = 0, "?", g.Points)
-                    End If
+					Dim med = "-"
+					Dim mr = ""
+					If g IsNot Nothing Then
+						mr = g.AdjustedMoodRating
+						Dim p = Math.Round(g.AdjustedMoodRating / g.MoonRatingBase * 100)
+						If Math.Abs(p - 75) < 3 Then p = 75
+						If Math.Abs(p - 50) < 3 Then p = 50
+						mr &= " (временной коэфициент " & p / 100.0 & ")"
+						If g.Position <= 3 Then med = "<span class='medal-" & g.Position & "'>" & g.Position & "</span>" Else med = g.Position
+						If IsShowPoints Then med = If(g.Points = 0, "?", g.Points)
+					End If
 
 
 

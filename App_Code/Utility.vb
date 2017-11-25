@@ -6,14 +6,14 @@ Imports Microsoft.VisualBasic
 Public Class Utility
 
 
-    Public Const CurrentGameNum As Integer = 20 ' запланированная игра
-    Public Const QuestionsAvaliableForGame As Integer = 20
+	Public Const CurrentGameNum As Integer = 23 ' запланированная игра
+	Public Const QuestionsAvaliableForGame As Integer = 22
 
 
 
-    Public Shared ReadOnly Property QuestionAcceptDaysLeft As Integer
+	Public Shared ReadOnly Property QuestionAcceptDaysLeft As Integer
         Get
-			Return (New Date(2017, 7, 23) - Date.Now).Days
+			Return (New Date(2018, 1, 13) - Date.Now).Days
 		End Get
     End Property
 

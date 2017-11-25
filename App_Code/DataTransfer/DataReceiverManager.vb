@@ -47,8 +47,8 @@ Public Class DataReceiverManager
             Dim teamId = GetTeamId(tm.TeamName)
 
             For Each aq In tm.AnsweredQuestions.Split(",")
-
-                Dim questNum = Integer.Parse(aq)
+				If (String.IsNullOrWhiteSpace(aq)) Then Continue For
+				Dim questNum = Integer.Parse(aq)
                 If (quest.ContainsKey(questNum)) Then
                     quest(questNum) &= "," & teamId
                 Else

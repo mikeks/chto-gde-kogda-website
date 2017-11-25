@@ -43,7 +43,7 @@
         <div class="title-phila">Филадельфия, США</div>
     </div>
 
-<%--    <div class="next-game-box">
+    <div class="next-game-box">
         <div class="map-box">
             <a href="about-game.aspx#map" class="map-box-a">
                 <img src="/Img/map.png" />
@@ -54,9 +54,9 @@
             </a>
         </div>
         <div class="next-game">Следующая игра</div>
-        <div class="next-game-dt">5 августа 2017</div>
+        <div class="next-game-dt">20 января 2018</div>
         <div class="next-game-tm">5:30 PM</div>
-    </div>--%>
+    </div>
 
     <div class="login-box">
         <%If UserManager.CurrentUser Is Nothing Then %>

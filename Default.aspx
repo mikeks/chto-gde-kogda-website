@@ -12,6 +12,12 @@
 	<section class="info-message">
 		<h1>Читайте про наши игры!</h1>
 
+        <a class="game-article" target="_blank" href="https://www.docdroid.net/F9yX4b4/riz47.pdf#page=18">
+            <div>XXII игра</div>
+            <div>18 ноября 2017</div>
+            <img src="/Img/media/game22.jpg" />
+        </a>
+
         <a class="game-article" target="_blank" href="https://www.docdroid.net/UQtvtXF/riz43.pdf#page=18">
             <div>XXI игра</div>
             <div>21 октября 2017</div>

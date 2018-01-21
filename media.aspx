@@ -8,6 +8,16 @@
         Читайте отчеты об играх в беслатной газете <a href="http://adandlife.com" target="_blank">"Реклама и Жизнь"</a> - страница 18.
     </p>
 
+	    <section id="game22">
+        <h1>Очерк о XXII игре (18 ноября 2017)</h1>
+        <p>
+            Опубликован в 47 номере газеты "Реклама и Жизнь" за 2017 год. Нажмите на изображение, чтобы открыть виртуальную газету.
+        </p>
+        <a target="_blank" href="https://www.docdroid.net/F9yX4b4/riz47.pdf#page=18">
+            <img src="/Img/media/game22.jpg" />
+        </a>
+    </section>
+
     <section id="game21">
         <h1>Очерк о XXI игре (21 октября 2017)</h1>
         <p>
